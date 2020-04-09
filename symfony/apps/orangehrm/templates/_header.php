@@ -25,23 +25,23 @@ $cultureElements = explode('_', $sf_user->getCulture());
         <?php       
         // Library JavaScript files
 
-        echo javascript_include_tag('jquery/jquery-3.4.1.min.js');
+        echo javascript_include_tag(js_web_path('jquery/jquery-3.4.1.min.js'));
 
-        echo javascript_include_tag('jquery/validate/jquery.validate.js');
+        echo javascript_include_tag(js_web_path('jquery/validate/jquery.validate.js'));
         
-        echo javascript_include_tag('jquery/jquery.ui.core.js');
-        echo javascript_include_tag('jquery/jquery.autocomplete.js');
-        echo javascript_include_tag('orangehrm.autocomplete.js');
-        echo javascript_include_tag('jquery/jquery.ui.datepicker.js');
-        echo javascript_include_tag('jquery/jquery.form.js');
-        echo javascript_include_tag('jquery/jquery.tipTip.minified.js');
-        echo javascript_include_tag('jquery/bootstrap-modal.js');
-        echo javascript_include_tag('jquery/jquery.clickoutside.js');
+        echo javascript_include_tag(js_web_path('jquery/jquery.ui.core.js'));
+        echo javascript_include_tag(js_web_path('jquery/jquery.autocomplete.js'));
+        echo javascript_include_tag(js_web_path('orangehrm.autocomplete.js'));
+        echo javascript_include_tag(js_web_path('jquery/jquery.ui.datepicker.js'));
+        echo javascript_include_tag(js_web_path('jquery/jquery.form.js'));
+        echo javascript_include_tag(js_web_path('jquery/jquery.tipTip.minified.js'));
+        echo javascript_include_tag(js_web_path('jquery/bootstrap-modal.js'));
+        echo javascript_include_tag(js_web_path('jquery/jquery.clickoutside.js'));
 
         // Custom JavaScript files
-        echo javascript_include_tag('orangehrm.validate.js');
-        echo javascript_include_tag('archive.js');
-        echo javascript_include_tag('orangehrm.marketplace.js');
+        echo javascript_include_tag(js_web_path('orangehrm.validate.js'));
+        echo javascript_include_tag(js_web_path('archive.js'));
+        echo javascript_include_tag(js_web_path('orangehrm.marketplace.js'));
         
 
         /* Note: use_javascript() doesn't work well when we need to maintain the order of JS inclutions.

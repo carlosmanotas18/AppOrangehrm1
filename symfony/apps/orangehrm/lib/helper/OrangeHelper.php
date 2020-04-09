@@ -284,7 +284,7 @@ function theme_path($path) {
 
     $themeName = $sfUser->getAttribute('meta.themeName'); 
     
-    $resourceDir = sfConfig::get('ohrm_resource_dir');
+    $resourceDir = get_ohrm_resource_dir();
     $themePath = public_path($resourceDir . '/themes/' . $themeName . '/');
     $themePath = empty($path)? $themePath : $themePath . $path;
     
@@ -293,11 +293,34 @@ function theme_path($path) {
 }
 
 function plugin_web_path($plugin, $path) {
-    
-    $resourceDir = sfConfig::get('ohrm_resource_dir');
+
+    $resourceDir = get_ohrm_resource_dir();
     $path = public_path($resourceDir . '/' . $plugin . '/' . $path);
     
     return $path;    
+}
+
+/**
+ * Return path to main JS files such as Jquery
+ * @param string $path
+ * @return string
+ */
+function js_web_path($path) {
+    return plugin_web_path("js", $path);
+}
+
+/**
+ * Return current webres directory by not depending on cached sfConfig
+ * If multiple webres directories exists, then this value depend on sfConfig::get('ohrm_resource_dir')
+ * @return string
+ */
+function get_ohrm_resource_dir() {
+    $resourceDir = sfConfig::get('ohrm_resource_dir');
+    if (!is_dir(sfConfig::get('sf_web_dir') . DIRECTORY_SEPARATOR . $resourceDir)) {
+        $resourceDir = sfFinder::type('directory')->name('webres_' . '*')->relative()
+            ->maxdepth(0)->in(sfConfig::get('sf_web_dir'))[0];
+    }
+    return $resourceDir;
 }
 
 /**
