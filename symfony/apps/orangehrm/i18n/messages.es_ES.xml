@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="2.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
   <header/>
@@ -4106,11 +4106,11 @@
       </trans-unit>
       <trans-unit id="1026">
         <source>Password cannot be empty</source>
-        <target>La contraseña no puede estar vacío</target>
+        <target>Ingrese un dato en la contraseña amigo</target>
       </trans-unit>
       <trans-unit id="1027">
         <source>Invalid credentials</source>
-        <target>Credenciales no válidas</target>
+        <target>No metio los datos bien amigo</target>
       </trans-unit>
       <trans-unit id="1028">
         <source>Europe/Belgrade</source>
